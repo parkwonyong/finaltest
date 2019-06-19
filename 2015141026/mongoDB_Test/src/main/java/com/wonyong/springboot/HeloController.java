@@ -15,9 +15,26 @@ import com.wonyong.springboot.repositories.MyDataMongoRepository;
 
 @Controller
 public class HeloController {
+	
 	@Autowired
 	MyDataMongoRepository repository;
-
+	
+	/**
+	 *
+	 * @fn 		public ModelAndView index(ModelAndView mav)
+	 * 
+	 * @brief 	메인 페이지 설정 
+	 *
+	 * @author 	박원용
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정		[2019-06-20; 박원용] \n
+	 * 		   	FinaAll()를 이용해 list에 모든 데이터를 저장	[2019-06-20; 박원용] \n
+	 *
+	 */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 
@@ -30,6 +47,8 @@ public class HeloController {
 		return mav;
 	}
 	
+	
+	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public ModelAndView insert(ModelAndView mav) {
 		mav.setViewName("insert");
@@ -38,6 +57,8 @@ public class HeloController {
 
 		return mav;
 	}
+	
+	
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public ModelAndView form(
