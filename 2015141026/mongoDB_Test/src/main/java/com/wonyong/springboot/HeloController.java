@@ -38,6 +38,7 @@ public class HeloController {
 
 		return mav;
 	}
+	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public ModelAndView form(
 			@RequestParam("name") String name, 
@@ -51,4 +52,27 @@ public class HeloController {
 		
 		return new ModelAndView("redirect:/");
 	}
+	
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
+		mav.setViewName("detail");
+		mav.addObject("title", "Detail Page");
+		mav.addObject("msg", "조회 및 수정 삭제");
+
+		List<MyDataMongo> list = repository.findById(id);
+		mav.addObject("datalist", list);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public ModelAndView removecheck(@PathVariable("id") String id, ModelAndView mav) {
+		mav.setViewName("delete");
+		mav.addObject("title", "Delete Page");
+		mav.addObject("msg", "삭제 유무 확인");
+
+		List<MyDataMongo> list = repository.findById(id);
+		mav.addObject("datalist", list);
+		return mav;
+	}
+	
 }
