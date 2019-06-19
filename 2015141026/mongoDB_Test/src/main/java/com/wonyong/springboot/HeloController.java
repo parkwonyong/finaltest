@@ -94,7 +94,7 @@ public class HeloController {
 			@RequestParam("name") String name, 
 			@RequestParam("address") String address,
 			@RequestParam("memo") String memo , 
-			@RequestParam("number") int number, 
+			@RequestParam(value="number", required=false) Integer number, 
 			ModelAndView mov) 
 	{
 		MyDataMongo mydata = new MyDataMongo(name, address, memo, number);
@@ -227,7 +227,7 @@ public class HeloController {
 			@RequestParam("name") String name,
 			@RequestParam("address") String address, 
 			@RequestParam("memo") String memo,
-			@RequestParam("number") int number, ModelAndView mov) {
+			@RequestParam(value="number", required=false) Integer number, ModelAndView mov) {
 		MyDataMongo mydata = new MyDataMongo(name, address, memo, number);
 		repository.save(mydata);
 		repository.deleteById(id);

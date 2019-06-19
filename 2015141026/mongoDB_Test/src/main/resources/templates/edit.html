@@ -51,7 +51,7 @@ table.navi tr td {
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
+	
 	<p th:text="${msg}"></p>
 	
 	<table th:each="obj : ${datalist}">
@@ -71,7 +71,7 @@ table.navi tr td {
 			</tr>
 			<tr>
 				<td><label for="memo">메모</label></td>
-				<td><input type="text" name="memo" th:value = "${obj.memo}"></td>
+				<td><textarea rows="10" cols="30" name="memo" th:value = "${obj.memo}"></textarea></td>
 			</tr>
 			<tr>
 				<td></td>

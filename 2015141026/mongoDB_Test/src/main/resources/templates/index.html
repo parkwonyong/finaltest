@@ -55,7 +55,7 @@ table.navi tr td {
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
+	
 	<p th:text="${msg}"></p>
 	<a th:href="@{'/insert'}">정보입력</a>
 	<p>
@@ -66,11 +66,13 @@ table.navi tr td {
 			<th>이름</th>
 			<th>주소</th>
 			<th>휴대폰 번호</th>
+			<th>메모</th>
 		</tr>
 		<tr th:each="obj : ${datalist}">
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.name}"></span></a></td>
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.address}"></span></a></td>
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.number}"></span></td>
+			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.memo}"></span></td>
 		</tr>
 		</form>
 	</table>
