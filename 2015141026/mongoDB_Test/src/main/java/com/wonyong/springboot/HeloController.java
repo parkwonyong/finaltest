@@ -38,4 +38,17 @@ public class HeloController {
 
 		return mav;
 	}
+	@RequestMapping(value = "/insert", method = RequestMethod.POST)
+	public ModelAndView form(
+			@RequestParam("name") String name, 
+			@RequestParam("address") String address,
+			@RequestParam("memo") String memo , 
+			@RequestParam("number") int number, 
+			ModelAndView mov) 
+	{
+		MyDataMongo mydata = new MyDataMongo(name, address, memo, number);
+		repository.save(mydata);
+		
+		return new ModelAndView("redirect:/");
+	}
 }
