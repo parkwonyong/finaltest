@@ -202,6 +202,23 @@ public class HeloController {
 		
 		mav.addObject("datalist", list);
 		return mav;
+		
+		/**
+		 *
+		 * @fn 		public ModelAndView editpost(ModelAndView mav)
+		 * 
+		 * @brief 	데이터 수정
+		 *
+		 * @author 	강석진
+		 * @date 	2019-06-05
+		 *
+		 * @param 	mav ModelAndView
+		 *
+		 * @remark	폼에 입력된 값을 받아온 후 객체에 저장	[2019-06-05; 강석진] \n
+		 *		   	save 메소드를 이용해 DB에 저장		[2019-06-05; 강석진] \n
+		 *			deleteBy를 이용해 이전데이터 삭제	[2019-06-05; 강석진] \n
+		 *
+		 */
 	}
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
