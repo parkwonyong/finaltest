@@ -71,6 +71,22 @@ public class HeloController {
 		return mav;
 	}
 	
+	/**
+	 *
+	 * @fn 		public ModelAndView insert(ModelAndView mav)
+	 * 
+	 * @brief 	입력 페이지 설정 
+	 *
+	 * @author 	박원용
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장		[2019-06-20; 박원용] \n
+	 *		   	save 메소드를 이용해 DB에 저장			[2019-06-20; 박원용] \n
+	 *
+	 */
+	
 	
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
