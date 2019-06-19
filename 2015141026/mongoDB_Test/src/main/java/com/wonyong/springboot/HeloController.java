@@ -29,4 +29,13 @@ public class HeloController {
 		mav.addObject("datalist", list);
 		return mav;
 	}
+	
+	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	public ModelAndView insert(ModelAndView mav) {
+		mav.setViewName("insert");
+		mav.addObject("title", "정보입력 페이지");
+		mav.addObject("msg", "정보를 입력해주세요");
+
+		return mav;
+	}
 }
