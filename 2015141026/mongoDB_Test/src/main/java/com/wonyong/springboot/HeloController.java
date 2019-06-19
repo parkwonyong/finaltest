@@ -103,6 +103,21 @@ public class HeloController {
 		return new ModelAndView("redirect:/");
 	}
 	
+	/**
+	 *
+	 * @fn 		public ModelAndView detail(ModelAndView mav)
+	 * 
+	 * @brief 	상세 조회 페이지
+	 *
+	 * @author 	박원용
+	 * @date 	2019-06-20
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark	findBy 를 이용한 조건검색 후 출력	[2019-06-20; 박원용] \n
+	 *
+	 */
+	
 	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
 	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("detail");
