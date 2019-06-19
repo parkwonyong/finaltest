@@ -13,4 +13,13 @@ public class MyDataMongo {
 	private String memo;
 
 	private int number;
+	
+	public MyDataMongo(String name, String address, String memo, int number) {
+
+		super();
+		this.name = name;
+		this.address = address;
+		this.memo =  memo;
+		this.number = number;
+	}
 }
