@@ -10,9 +10,9 @@ public class MyDataMongo {
 	private String address;
 	private String memo;
 
-	private int number;
+	private Integer number;
 	
-	public MyDataMongo(String name, String address, String memo, int number) {
+	public MyDataMongo(String name, String address, String memo, Integer number) {
 
 		super();
 		this.name = name;
@@ -53,11 +53,11 @@ public class MyDataMongo {
 		this.memo = memo;
 	}
 
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(int number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 
